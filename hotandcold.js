@@ -1,7 +1,7 @@
 // random number between 1 and 10 
 var randomnumber = Math.ceil(Math.random()*10);
 var previousguess = 0;
-console.log(randomnumber);
+
 
 // click submit, get value of #
 $(document).ready(function() {
