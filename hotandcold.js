@@ -5,9 +5,13 @@ var previousguess = 0;
 
 // click submit, get value of #
 $(document).ready(function() {
+ $('form').submit(function(){ return false; });
 	$("#submit").on("click", function() {
 	var userguess = $("input[name='number']").val();	
 	console.log(userguess);
+	if(!$.isNumeric(userguess)) {
+		return false;
+	}
 	if(userguess == randomnumber) {
 		$("#wintext").show();
 		$("#warmertext").hide();
@@ -27,6 +31,14 @@ $(document).ready(function() {
 	
 	
 	});
+   $("input[type='text']").keyup(function(event) {
+	  console.log("yes");
+	   if(event.keyCode == 13) {
+	   
+		  $("#submit").click(); 
+	   }
+   });
+
 	
 });
 
